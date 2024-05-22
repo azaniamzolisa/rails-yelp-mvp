@@ -1,0 +1,15 @@
+<div class="container mb-3">
+<ul class="list-group">
+  <li class="list-group-item"><%= @review.restaurant.name %></li>
+  <li class="list-group-item"><%= @review.restaurant.address %></li>
+  <li class="list-group-item"><%= @review.content %></li>
+  <li class="list-group-item"><%= @review.rating %></li>
+</ul>
+<%= link_to "Delete",
+    review_path(@review),
+    data: {turbo_method: :delete, turbo_confirm: "Are you sure?"},
+    class: "btn btn-danger mb-3"
+%>
+
+<%= link_to 'Back to restaurants', restaurants_path, class: "btn btn-primary mb-3" %>
+</div>

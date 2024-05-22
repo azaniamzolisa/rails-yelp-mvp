@@ -1,0 +1,19 @@
+<div class="container text-center mb-3">
+  <h1>Reviews for <%= @restaurant.name %></h1>
+  <ul class="list-unstyled">
+    <% @reviews.each do |review| %>
+      <li>
+        <strong>Restaurant:</strong> <%= link_to @restaurant.name, restaurant_path(@restaurant) %>
+      </li>
+      <li>
+        <strong>Content:</strong> <%= review.content %>
+      </li>
+      <li>
+        <strong>Rating:</strong> <%= review.rating %>
+      </li>
+      <hr>
+    <% end %>
+  </ul>
+
+  <%= link_to 'Back to Restaurants', restaurants_path, class: "btn btn-primary" %>
+</div>

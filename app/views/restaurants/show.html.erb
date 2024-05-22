@@ -1,10 +1,10 @@
-<p style="color: green"><%= notice %></p>
+<div class="container text-center mb3">
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.phone_number %></p>
+<p><%= @restaurant.category %></p>
 
-<%= render @restaurant %>
-
-<div>
-  <%= link_to "Edit this restaurant", edit_restaurant_path(@restaurant) %> |
-  <%= link_to "Back to restaurants", restaurants_path %>
-
-  <%= button_to "Destroy this restaurant", @restaurant, method: :delete %>
+<%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: "btn btn-secondary" %>
+<%= link_to 'Back to restaurants', restaurants_path, class: "btn btn-primary" %>
+<%= link_to 'See Reviews', restaurant_reviews_path(@restaurant), class: "btn btn-secondary" %>
 </div>
